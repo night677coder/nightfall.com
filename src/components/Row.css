@@ -1,0 +1,140 @@
+
+.row {
+  margin-top: 60px;
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .row {
+    margin-top: 40px;
+  }
+
+  .row h2 {
+    margin-left: 0;
+    font-size: 1.4rem;
+  }
+
+  .row__posters {
+    padding: 16px 6px;
+    gap: 10px;
+  }
+
+  .row__poster {
+    width: 150px;
+    height: 220px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row h2 {
+    font-size: 1.2rem;
+  }
+
+  .row__posters {
+    padding: 14px 4px;
+    gap: 8px;
+  }
+
+  .row__poster {
+    width: 120px;
+    height: 180px;
+    border-radius: 14px;
+  }
+}
+
+.row h2 {
+  margin: 0 0 16px 10px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.row__container {
+  position: relative;
+}
+
+
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px 10px;
+  scrollbar-width: none;
+  gap: 12px;
+}
+
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+
+.row__poster {
+  object-fit: cover;
+  width: 180px;
+  height: 260px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.row__poster:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.35);
+}
+
+
+.row__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.9));
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.row__arrow--left {
+  left: 10px;
+}
+
+.row__arrow--right {
+  right: 10px;
+}
+
+.row__posterContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.row__remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: none;
+  transition: background 0.2s ease;
+}
+
+.row__posterContainer:hover .row__remove {
+  display: block;
+}
+
+.row__remove:hover {
+  background: rgba(239, 68, 68, 1);
+}

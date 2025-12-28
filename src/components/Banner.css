@@ -1,0 +1,163 @@
+.banner {
+  background: linear-gradient(135deg, #0f172a, #1f2937);
+  min-height: 500px;
+  color: white;
+  position: relative;
+  margin-top: 70px;
+  padding: 60px 80px;
+}
+
+.banner__container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.banner__poster {
+  width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.banner__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner__title {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.banner__meta {
+  display: flex;
+  gap: 16px;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.banner__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.banner__badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.banner__description {
+  max-width: 520px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.banner__buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.banner__primary,
+.banner__secondary {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 12px 28px;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.banner__primary {
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: white;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.banner__secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.banner__primary:hover,
+.banner__secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(99, 102, 241, 0.4);
+}
+
+.banner--fadeBottom {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    padding: 48px 40px;
+    min-height: 420px;
+  }
+
+  .banner__poster {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 24px;
+  }
+
+  .banner__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .banner__details {
+    align-items: center;
+  }
+
+  .banner__meta {
+    justify-content: center;
+  }
+
+  .banner__description {
+    max-width: 100%;
+  }
+
+  .banner__buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .banner__poster {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 32px 16px;
+  }
+
+  .banner__poster {
+    width: 160px;
+  }
+
+  .banner__title {
+    font-size: 1.8rem;
+  }
+
+  .banner__meta {
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  .banner__description {
+    font-size: 0.95rem;
+  }
+}

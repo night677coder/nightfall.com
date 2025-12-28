@@ -1,0 +1,35 @@
+.footer {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  color: #cbd5f5;
+  text-align: center;
+  padding: 24px 40px;
+  margin-top: 0;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+
+.footer__text {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__separator {
+  color: rgba(148, 163, 184, 0.6);
+}

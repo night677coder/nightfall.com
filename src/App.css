@@ -1,0 +1,36 @@
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 100px 60px 140px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 90px 40px 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 85px 24px 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 80px 16px 110px;
+  }
+}
+
+.search-empty {
+  color: #999;
+  margin-top: 120px;
+  text-align: center;
+  font-size: 1.2rem;
+}

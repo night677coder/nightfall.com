@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://img.freepik.com/premium-photo/3d-bat-full-moon-border-with-nightfall-text-concept-as-dark-eerie-border-frame-featuring-b_980716-577940.jpg?w=2000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="NIGHTFALL - Your ultimate streaming service for movies and TV shows" />
+    <meta name="keywords" content="streaming, movies, tv shows, nightfall, entertainment, watch online" />
+    <meta name="author" content="NIGHTFALL Team" />
+    <meta property="og:title" content="NIGHTFALL - Streaming Service" />
+    <meta property="og:description" content="Discover and stream your favorite movies and TV shows with NIGHTFALL" />
+    <meta property="og:image" content="https://img.freepik.com/premium-photo/3d-bat-full-moon-border-with-nightfall-text-concept-as-dark-eerie-border-frame-featuring-b_980716-577940.jpg?w=2000" />
+    <meta property="og:url" content="http://localhost:3000" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NIGHTFALL - Streaming Service" />
+    <meta name="twitter:description" content="Stream movies and TV shows online" />
+    <meta name="twitter:image" content="https://img.freepik.com/premium-photo/3d-bat-full-moon-border-with-nightfall-text-concept-as-dark-eerie-border-frame-featuring-b_980716-577940.jpg?w=2000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        min-height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+    <title>NIGHTFALL</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="enter-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+      <button id="enter-btn" style="padding: 20px 40px; font-size: 24px; background: #e50914; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="enterApp()">ENTER</button>
+    </div>
+    <div id="root"></div>
+    <script>
+      function enterApp() {
+        document.getElementById('enter-screen').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

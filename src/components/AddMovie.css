@@ -1,0 +1,112 @@
+.add-movie {
+  padding: 20px;
+  color: white;
+}
+
+.add-movie h2 {
+  margin-bottom: 20px;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 10px;
+  background: #333;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.search-section button {
+  padding: 10px 20px;
+  background: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-section button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.search-results {
+  margin-bottom: 20px;
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-results li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #333;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-results li:hover {
+  background: #444;
+}
+
+.search-results img {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+}
+
+.selected-movie {
+  margin-top: 20px;
+}
+
+.movie-preview {
+  display: flex;
+  gap: 20px;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.movie-preview img,
+.movie-preview iframe {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border: none;
+  border-radius: 5px;
+}
+
+.movie-preview h4 {
+  margin-top: 0;
+}
+
+.movie-preview p {
+  margin: 10px 0;
+}
+
+.movie-preview button {
+  padding: 10px 20px;
+  background: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  margin: 10px 0;
+  font-weight: bold;
+}
