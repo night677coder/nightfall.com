@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/nightfalll/sw.js', { scope: '/nightfalll/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/nightfalll/sw-enhanced.js', { scope: '/nightfalll/' }).then(registration => {console.log('Enhanced SW registered:', registration);}).catch(error => {console.log('Enhanced SW registration failed:', error);})})}

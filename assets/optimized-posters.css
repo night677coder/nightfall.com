@@ -1,0 +1,205 @@
+/* Optimized poster loading for data and WiFi connections */
+
+/* Base poster styles with lazy loading */
+.row__poster {
+  object-fit: cover;
+  width: 180px;
+  height: 260px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px #0f172a66;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  
+  /* Lazy loading placeholder */
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  
+  /* Network-aware loading */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Loaded state - remove shimmer */
+.row__poster.loaded {
+  animation: none;
+  background: none;
+}
+
+/* Hover effects */
+.row__poster:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px #6366f159;
+  filter: brightness(1.1);
+}
+
+/* Banner poster optimizations */
+.banner__poster {
+  width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px #0006;
+  
+  /* Lazy loading placeholder */
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.banner__poster.loaded {
+  animation: none;
+  background: none;
+}
+
+/* Detail poster optimizations */
+.detail__poster {
+  width: 220px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px #00000073;
+  
+  /* Lazy loading placeholder */
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.detail__poster.loaded {
+  animation: none;
+  background: none;
+}
+
+/* Network-aware image quality */
+@media (prefers-reduced-data: reduce) {
+  .row__poster,
+  .banner__poster,
+  .detail__poster {
+    image-rendering: pixelated;
+    filter: contrast(0.9);
+  }
+}
+
+/* WiFi optimizations - higher quality */
+@media (min-resolution: 2dppx) {
+  .row__poster,
+  .banner__poster,
+  .detail__poster {
+    image-rendering: -webkit-optimize-contrast;
+    filter: contrast(1.05);
+  }
+}
+
+/* Mobile optimizations - reduce data usage */
+@media (max-width: 768px) {
+  .row__poster {
+    width: 150px;
+    height: 220px;
+    border-radius: 16px;
+  }
+  
+  .banner__poster {
+    width: 200px;
+  }
+  
+  .detail__poster {
+    width: 200px;
+  }
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .row__poster {
+    width: 120px;
+    height: 180px;
+    border-radius: 14px;
+  }
+  
+  .banner__poster {
+    width: 160px;
+  }
+  
+  .detail__poster {
+    width: 170px;
+  }
+}
+
+/* Intersection Observer for lazy loading support */
+.row__poster[data-src],
+.banner__poster[data-src],
+.detail__poster[data-src] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.row__poster[data-src].loaded,
+.banner__poster[data-src].loaded,
+.detail__poster[data-src].loaded {
+  opacity: 1;
+}
+
+/* Fallback for browsers that don't support lazy loading */
+.no-js .row__poster,
+.no-js .banner__poster,
+.no-js .detail__poster {
+  opacity: 1;
+}
+
+/* Progressive enhancement - show low-res first */
+.row__poster.low-res,
+.banner__poster.low-res,
+.detail__poster.low-res {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.row__poster.high-res,
+.banner__poster.high-res,
+.detail__poster.high-res {
+  filter: blur(0);
+}
+
+/* Network connection optimizations */
+@media (prefers-reduced-data: reduce) {
+  .row__poster,
+  .banner__poster,
+  .detail__poster {
+    /* Skip animations for data saving */
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .row__poster,
+  .banner__poster,
+  .detail__poster {
+    /* Better contrast in dark mode */
+    filter: brightness(0.95) contrast(1.05);
+  }
+  
+  .row__poster:hover,
+  .banner__poster:hover,
+  .detail__poster:hover {
+    filter: brightness(1.05) contrast(1.1);
+  }
+}
