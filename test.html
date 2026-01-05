@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Nightfalll</title>
+</head>
+<body>
+    <h1>Testing Nightfalll Assets</h1>
+    <p>Checking if assets load correctly...</p>
+    
+    <script>
+        // Test CSS loading
+        fetch('/assets/index-C8VMxZS5.css')
+            .then(response => {
+                if (response.ok) {
+                    document.body.innerHTML += '<p style="color: green;">✓ CSS loads correctly</p>';
+                } else {
+                    document.body.innerHTML += '<p style="color: red;">✗ CSS failed to load</p>';
+                }
+            })
+            .catch(error => {
+                document.body.innerHTML += '<p style="color: red;">✗ CSS error: ' + error.message + '</p>';
+            });
+        
+        // Test JS loading
+        fetch('/assets/index-Dyg27oqN.js')
+            .then(response => {
+                if (response.ok) {
+                    document.body.innerHTML += '<p style="color: green;">✓ JavaScript loads correctly</p>';
+                } else {
+                    document.body.innerHTML += '<p style="color: red;">✗ JavaScript failed to load</p>';
+                }
+            })
+            .catch(error => {
+                document.body.innerHTML += '<p style="color: red;">✗ JavaScript error: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+</html>
